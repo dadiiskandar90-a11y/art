@@ -1,0 +1,6 @@
+{
+  "name": "ART QUIZ CHALLENGE – SENI RUPA KELAS 6",
+  "description": "Game edukasi interaktif seni rupa kelas 6 SD dengan 20 soal pilihan ganda, timer 20 detik, animasi jawaban, pembahasan singkat, skor akhir, dan predikat.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

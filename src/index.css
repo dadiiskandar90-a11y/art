@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #f6f8fc;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+@keyframes answer-pop {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.03);
+  }
+  70% {
+    transform: scale(0.99);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes answer-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-7px);
+  }
+  40% {
+    transform: translateX(7px);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--tx, 0px), var(--ty, 80px), 0) rotate(var(--rot, 240deg)) scale(0.7);
+  }
+}
+
+.animate-answer-pop {
+  animation: answer-pop 380ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-answer-shake {
+  animation: answer-shake 420ms cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards;
+}
+
+.animate-confetti-piece {
+  animation: confetti-fall 900ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-answer-pop,
+  .animate-answer-shake,
+  .animate-confetti-piece {
+    animation: none !important;
+  }
+}
+
